@@ -14,25 +14,32 @@
     <title>Document</title>
   </head>
   <body>
-    <section class="block block--dark block--skewed-left hero">
-      <div class="container grid grid--1x2">
-        <header class="block__header hero__content">
-          <h1 class="block__heading">Cloud hosting for Pros</h1>
-          <p class="hero__tagline">
-            Deploy your websites in less than 60 seconds
-          </p>
-          <a href="#" class="btn btn--accent btn--stretched">Get Started</a>
-        </header>
-        <picture>
-          <source
-            srcset="images/banner.webp 1x, images/banner@2x.webp 2x"
-            type="image/webp" />
-          <source
-            srcset="images/banner.png 1x, images/banner@2x.png 2x"
-            type="image/png" />
-          <img class="hero__image" src="images/banner.png" alt=""
-        /></picture>
+    <section class="block container block-domain">
+      <header class="block__header">
+        <h2>The best webhosting Starting $9 at per montn</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, eos?
+        </p>
+      </header>
+      <div class="input-grp">
+        <input type="text" class="input" placeholder="Enter domain name here" />
+        <button type="submit" class="btn btn--accent">
+          <svg class="icon icon--white">
+            <use xlink:href="icons/sprite.svg#search"></use>
+          </svg>
+          Search
+        </button>
       </div>
+      <ul class="list block-domain__prices">
+        <li>
+          <div class="badge badge--secondary">.com $9.26</div>
+        </li>
+        <li>.sg $7.91</li>
+        <li>.space $12.98</li>
+        <li>.info $14.15</li>
+        <li>.net $16.15</li>
+        <li>.xyz $10.15</li>
+      </ul>
     </section>
     <script src="js/main.js"></script>
   </body>
