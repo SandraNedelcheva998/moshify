@@ -560,3 +560,73 @@ a{
     max-width: 1140px;
     margin: 0 auto;
 }
+/*Navbar*/
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0.6rem 1rem;
+    align-items: center;
+}
+
+.navbar--style{
+    background-color: black;
+    color: white;
+
+}
+.navbar__list{
+    width: 100%;
+    margin: 0;
+}
+.navbar__item{
+    padding: 0.5rem 2rem;
+    border-bottom:1px solid #222;
+}
+.navbar__item>a{
+    color: #d2d0db;
+    transition: color .3s;
+}
+.navbar__item>a:hover,
+.navbar__item>a:active{
+    color: #fff;
+}
+.navbar__toggle{
+    opacity: 0.5;
+    cursor: pointer;
+    transition: box-shadow .15s;
+}
+.navbar__toggle:hover{
+    opacity: 1;
+}
+.navbar.collapsible--expanded .navbar__toggle{
+    opacity: 1;
+    box-shadow: 0 0 0 3px #666;
+    border-radius: 5px;
+}
+/*
+.navbar__logo{
+    transform: translateY(5px);
+}*/
+@media screen and (min-width:768px){
+    .navbar__toggle{
+        display: none;
+    }
+    .navbar__list{
+        width: auto;
+        display: flex;
+        font-size: 1.6rem;
+        max-height: 100%;
+        opacity: 1;
+    }
+    .navbar__item{
+        border: none;
+    }
+}
+
+/*TODO: pomini prethodni predavanja i vidi raboti sto ti se slabost
+-tricks
+-displays
+-koga se koristi max-width vs width
+-clasi vgnezduvanje
+-kako funcioniraat fundamentalno flex vs grid
+*/
