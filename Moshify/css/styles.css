@@ -683,6 +683,15 @@ a{
     }
 }
 
+/*Plans block*/
+.block-plans .grid{
+    gap: 8rem 4rem;
+}
+.block-plans .card{
+    max-width: 500px;
+    margin: 0 auto;
+}
+
 
 
 /*TODO: pomini prethodni predavanja i vidi raboti sto ti se slabost
