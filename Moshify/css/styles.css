@@ -90,7 +90,7 @@ a{
     border-radius: 20px;
     font-size: 2rem;
     font-weight: 600;
-    padding: .5rem 2rem;
+    padding: .5rem 1.5rem;
     white-space: nowrap;
     display: inline;
 
@@ -333,6 +333,9 @@ a{
     background-color: #02cdf1;
 }
 /*Plan*/
+.plan{
+    transition: scale .2s ease-out;
+
 .plan__name{
     font-size: 2.4rem;
     color: white;
@@ -371,9 +374,7 @@ a{
     top:-6px;
     right: 5%;
 }
-.plan{
-    transition: scale .2s ease-out;/*poradi nekoja prichina ne rabotat*/
-}
+
 .plan:hover{
     transform: scale(1.05);
 }
@@ -454,20 +455,41 @@ a{
     }
 }
 /*Grid*/
+
+.grid {
+  display: grid;
+}
+
+@media screen and (min-width: 768px) {
+  .grid--1x2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .grid--1x3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+/*
 .grid{
     display: grid;
 }
-@media screen and (min-width:768px){
+
+@media screen and (min-width: 768px){
     .grid--1x2{
-        grid-template-columns: repeat(2,1fr);
-    }
-    
+        grid-template-columns: repeat(2, 1fr);
+    }   
 }
-@media screen and (min-width:1024px){
+
+@media screen and (min-width: 1024px){
     .grid--1x3{
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 }
+*/
 /*Testimonial*/
 .testimonial{
     padding: 5rem;
@@ -539,14 +561,15 @@ a{
 }
 .collapsible__icon {
     transform: rotate(-90deg);
-    transition: transform 0.3s;
+    transition: transform 0.3s; 
 }
 
 .collapsible__content{
    max-height: 0;
    overflow: hidden;
    opacity: 0;
-   transform: all .3s;
+   transform: all .3s; /*poradi nekoja prichina ne rabotat*/
+}
 }
 
 .collapsible--expanded .collapsible__icon{
@@ -679,7 +702,7 @@ a{
     margin: 4rem auto;
     max-width: 670px;
 }
-.block-domain__prices{
+.block-domain__prices{ /*ima problem so .space $12.98 kade ide vo vtora redica*/
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(2,6rem);
@@ -688,7 +711,14 @@ a{
     justify-items: center;
     max-width: 700px;
     margin: 0 auto;
+
 }
+
+.block-domain__prices>*{ /*fixes the two line issue but list item too close to another one*/
+    white-space: nowrap;
+
+}
+
 @media screen and (min-width:768px){
     .block-domain__prices{
         grid-template-columns: repeat(auto-fit,minmax(10rem,1fr));
@@ -702,6 +732,16 @@ a{
     max-width: 500px;
     margin: 0 auto;
 }
+/*Features block*/
+.block-feature{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.block-feature__image{
+    width: 100%;
+}
+
 
 /*TODO: pomini prethodni predavanja i vidi raboti sto ti se slabost
 -tricks
