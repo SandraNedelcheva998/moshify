@@ -90,7 +90,7 @@ a{
     border-radius: 20px;
     font-size: 2rem;
     font-weight: 600;
-    padding: .5rem 2rem;
+    padding: .5rem 1.5rem;
     white-space: nowrap;
     display: inline;
 
@@ -691,10 +691,16 @@ a{
     justify-items: center;
     max-width: 700px;
     margin: 0 auto;
+
+    /*
+    white-space: nowrap;
+    column-gap: 2rem;*/
 }
+
+
 @media screen and (min-width:768px){
     .block-domain__prices{
-        grid-template-columns: repeat(auto-fit,minmax(10rem,1fr));
+        grid-template-columns: repeat(auto-fit,minmax(10rem,1fr));        
 
     }
 }
@@ -707,6 +713,41 @@ a{
     max-width: 500px;
     margin: 0 auto;
 }
+
+/*Features*/
+.feature{
+    gap: 4rem 2rem;
+
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 6rem;
+}
+
+.feature:first-of-type{
+    margin-top: 6rem;
+}
+
+.feature__heading{
+    margin: 1rem 0;
+}
+.feature__image{
+    width: 100%;
+}
+
+.block-feature{
+    padding: 0;
+}
+
+@media screen and (min-width:768px){
+    /*
+    .feature:nth-of-type(even) .feature__content{
+        order: 2;        
+    }*/
+    .feature:nth-of-type(even) .feature__content{
+        order: 2;
+    }
+}
+
 
 
 
