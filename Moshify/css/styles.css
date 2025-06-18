@@ -13,7 +13,10 @@
     box-sizing: border-box;
 }
 /*Typography*/
-
+::selection{
+    background: var(--color-primary);
+    color: white;
+}
 html{
     font-size: 62.5%;
 }
@@ -38,6 +41,7 @@ h2{
 }
 h3{
     font-size: 3rem;
+    font-weight: 500;
 }
 p{
     margin-top: 0;
@@ -122,7 +126,6 @@ a{
 .list{
     list-style: none;
     padding-left: 0;
-    color: var(--color-heading);
 }
 
 .list--inline .list__item{
@@ -132,6 +135,8 @@ a{
 .list--tick{
     list-style-image: url(../icons/tick.svg);
     padding-left: 3rem;
+    color: var(--color-heading);
+
 }
 .list--tick .list__item{
     padding-left: .5rem;
@@ -401,7 +406,7 @@ a{
 /*Media Object*/
 .media{
     display: flex;
-    margin: 2rem;
+    margin-bottom: 4rem;
 }
 .media__image{
    margin-top: 1rem;
@@ -574,16 +579,21 @@ a{
 .block__heading{
     margin-top: 0;
 }
-.block--dark .block__heading{
+.block--dark h1,
+.block--dark h2,
+.block--dark h3{
     color: white;
 }
 .block--skewed-right{
-    padding-bottom: calc(var(--padding-vertical)+4rem);
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%);
+    /*ODLEPENI DA SE OPERATORITE I VREDNOSTITE, INACHE NEMA DA RABOTI
+        padding-bottom: calc(var(--padding-vertical)+4rem); --> NOPE
+    */
+    padding-bottom: calc(var(--padding-vertical) + 4rem);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 90%);
 }
 .block--skewed-left{
-    padding-bottom: calc(var(--padding-vertical)+4rem);
-    clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+    padding-bottom: calc(var(--padding-vertical) + 4rem);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
 }
 .container{
     max-width: 1140px;
@@ -652,9 +662,7 @@ a{
     }
 }
 /*Hero*/
-.hero{
-    clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
-}
+
 .hero__tagline{
     font-size: 2rem;
     color: #b9c3cf;
@@ -748,9 +756,23 @@ a{
     }
 }
 
+/*Showcase block*/
 
-
-
+.block-showcase__image > img{
+    width: 100%; /*Vo mobile version slikata ke e sekad responsive*/
+}
+@media screen and (min-width:768px){
+    .block-showcase .grid{
+        grid-template-columns: repeat(2, 50%);
+    }
+    .block-showcase__image{
+        justify-self: end;
+    }
+     .block-showcase__image > img {
+        width: auto; 
+        max-width: 700px;
+    } 
+}
 /*TODO: pomini prethodni predavanja i vidi raboti sto ti se slabost
 -tricks
 -displays
